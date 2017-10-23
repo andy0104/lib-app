@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    responseMessage: '',
     emailAddress: '',
     isValidEmail: Ember.computed.match('emailAddress', /^.+@.+\..+$/),
     isMessageLong: Ember.computed.gte('message.length', 5),
     isValid: Ember.computed.and('isValidEmail', 'isMessageLong'),
 
     actions: {
-        sendMessage(){            
+        sendMessage(){
             var email = this.get('emailAddress');
             var msg = this.get('message');
 
