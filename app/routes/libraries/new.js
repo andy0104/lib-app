@@ -6,6 +6,9 @@ export default Ember.Route.extend({
     },
     actions: {
         saveLibrary(newLibrary){
+            //console.log(newLibrary._internalModel.__attributes.address);
+            return 0;
+
             newLibrary.save().then(() => {
                 this.transitionTo('libraries');
             })
